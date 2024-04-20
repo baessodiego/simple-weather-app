@@ -1,10 +1,6 @@
 <template>
     <div class="relative">
         <div v-if="todayData && forecastData">
-
-            <!--            loading state-->
-
-
             <div v-if="store.loading" class="h-36 py-1 animate-pulse container bg-neutral-100 rounded-xl p-12  gap-4 flex items-center justify-center relative">
                 <div class="h-4 bg-neutral-200 w-48 rounded-full">
                 </div>
@@ -76,7 +72,7 @@
                 <div v-if="store.loading" class="animate-pulse bg-neutral-100 p-12 rounded-xl h-[450px] container">
 
                 </div>
-                <div v-else class="bg-neutral-100 p-12 rounded-xl container">
+                <div v-else class="bg-neutral-100 px-4 md:px-12 py-12 rounded-xl container">
                     <client-only>
                         <VueApexCharts :options="todayOptions" :series="todaySeries" height="450"></VueApexCharts>
                     </client-only>
