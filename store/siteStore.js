@@ -24,7 +24,7 @@ export const useSiteStore = defineStore('site', {
                 })
                 this.city.lat = response[0].lat
                 this.city.lon = response[0].lon
-                this.city.name = response[0].local_names ? response[0].local_names.it : response[0].name
+                this.city.name = response[0].local_names && response[0].local_names['it'] ? response[0].local_names['it'] : response[0].name
                 return true
             } catch (error) {
                 await Swal.fire({
